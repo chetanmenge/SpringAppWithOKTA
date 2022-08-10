@@ -1,0 +1,21 @@
+spring:
+ thymeleaf:
+   cache: false
+ security:
+   oauth2:
+
+     client:
+       registration:
+         okta:
+           
+           client-id: "" #SPA  public client app pkce ( Proof Key for Code Exchange ) recommended for Confidential  client as well 
+           client-authentication-method: none
+           authorization-grant-type: authorization_code
+           #redirect-uri: http://localhost:8080/login/callback/ #for Angular app
+
+       provider:
+         okta:
+           authorization-uri: https://trial-1638598.okta.com/oauth2/default/v1/authorize
+           token-uri: https://trial-1638598.okta.com/oauth2/default/v1/token
+           user-info-uri: https://trial-1638598.okta.com/oauth2/default/v1/userinfo
+           jwk-set-uri: https://trial-1638598.okta.com/oauth2/default/v1/keys
